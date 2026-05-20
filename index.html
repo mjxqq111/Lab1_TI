@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Лабораторная работа №1</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Алгоритмы шифрования</h1>
+        <div class="mainContainer">
+            <div class="mainContainerBlock algSel">
+                <fieldset id="algSelFieldSet">
+                    <legend>Метод шифрования:</legend>
+                    <input type="radio" id="alg1" name="algSel" value="decimation" checked>
+                    <label for="alg1">Метод децимации</label>
+                    <input type="radio" id="alg2" name="algSel" value="vigenere">
+                    <label for="alg2">Шифр Виженера</label>
+                </fieldset>
+            </div>
+            <div class="mainContainerBlock">
+                <div class="container">
+                    <div class="containerBlock encr">
+                        <h3>Шифрование</h3>
+                        <div class="inputBlocks">
+                            <div class="inputBlock">
+                                <label for="encrKey">Введите ключ:</label>
+                                <input type="text" id="encrKey"/>
+                            </div>
+                            <div class="inputBlock">
+                                <label for="encrMsg">Введите сообщение:</label>
+                                <input type="text" class="textField" id="encrMsg" maxlength="10000"/>
+                            </div>
+                            <div class="inputBlock">
+                                <label for="encrRes">Результат:</label>
+                                <input type="text" readonly id="encrRes"/>
+                            </div>
+                        </div>
+                        <div class="infoText">
+                            <p id="encrInfoTextElem"></p>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" id="encrBtn">Зашифровать</button>
+                            <div class="fileButtons">
+                                <button type="button" id="encrLoad">Загрузить сообщение из файла</button>
+                                <button type="button" id="encrSave">Сохранить результат в файл</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerBlock decr">
+                        <h3>Дешифрование</h3>
+                        <div class="inputBlocks">
+                            <div class="inputBlock">
+                                <label for="decrKey">Введите ключ:</label>
+                                <input type="text" id="decrKey" maxlength="10000"/>
+                            </div>
+                            <div class="inputBlock">
+                                <label for="decrCipher">Введите шифротекст:</label>
+                                <input type="text" class="textField" id="decrCipher" maxlength="10000"/>
+                            </div>
+                            <div class="inputBlock decrResult">
+                                <label for="decrRes">Результат:</label>
+                                <input type="text" readonly id="decrRes"/>
+                            </div>
+                        </div>
+                        <div class="infoText">
+                            <p id="decrInfoTextElem"></p>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" id="decrBtn">Расшифровать</button>
+                            <div class="fileButtons">
+                                <button type="button" id="decrLoad">Загрузить шифротекст из файла</button>
+                                <button type="button" id="decrSave">Сохранить результат в файл</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="charsInfo">
+                <p>Допустимые символы: АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя</p>
+                <p>Остальные символы отбрасываются</p>
+            </div>
+        </div>
+        <script src="cipher.js"></script>
+        <script src="vigenere.js"></script>
+        <script src="decimation.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
